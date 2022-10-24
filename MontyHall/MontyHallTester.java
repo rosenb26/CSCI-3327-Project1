@@ -11,6 +11,6 @@ public class MontyHallTester {
         System.out.println("Win % without switching: " + m.getHits() / m.getTrials());
         m.resetHits();
         m.yesSwitch();
-        System.out.println("Win % ith switching: " + m.getHits() / m.getTrials());
+        System.out.println("Win % with switching: " + m.getHits() / m.getTrials());
     }
 }
