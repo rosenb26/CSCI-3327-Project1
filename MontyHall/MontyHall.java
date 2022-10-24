@@ -44,7 +44,7 @@ public class MontyHall {
     /**
      * Simulate the player choosing a door randomly and switching to a different
      * door after the host reveals all but one door. If the player correctly
-     * chooses the door with the prize (after switching, increment the number
+     * chooses the door with the prize (after switching), increment the number
      * of hits.
      */
     public void yesSwitch() {
