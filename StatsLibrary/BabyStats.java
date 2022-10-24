@@ -322,7 +322,7 @@ public class BabyStats {
      * @param N The number of items in the set.
      * @param n The number of items selected.
      * @param r The number of items of type I.
-     * @return The hypergeometric mean.
+     * @return The hypergeometric mean: (nr)/N.
      */
     public BigDecimal hypergeometricMean(int N, int n, int r) {
         BigDecimal capitalNCopy = BigDecimal.valueOf(N);
@@ -336,7 +336,7 @@ public class BabyStats {
      * @param N The number of items in the set.
      * @param n The number of items selected.
      * @param r The number of items of type I.
-     * @return The hypergeometric variance.
+     * @return The hypergeometric variance: n * (r/N) * (N - r) / N * (N - n)/(N - 1).
      */
     public BigDecimal hypergeometricVariance(int N, int n, int r) {
         BigDecimal capitalNCopy = BigDecimal.valueOf(N);
