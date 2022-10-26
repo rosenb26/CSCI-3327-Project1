@@ -16,7 +16,7 @@ public class FishMarketTester {
         market.generateSeafood(10);
         market.writeItemsToFile("weightedSelection.csv");
         
-        // load the data which were written to the the first file
+        // load the data which were written to the first file
         market.readItemsFromFile("fairSelection.csv");
         
         // demonstrate the toString() method for funsies
