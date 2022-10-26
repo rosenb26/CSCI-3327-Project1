@@ -12,9 +12,15 @@ public class FishMarketTester {
         market.generateSeafood(1);
         market.writeItemsToFile("fairSelection.csv");
         
-        /* Make Fish 10 times more likely to b echosen */
+        /* Make Fish 10 times more likely to be chosen. */
         market.generateSeafood(10);
-        market.writeItemsToFile(("weightedSelection.csv"));
+        market.writeItemsToFile("weightedSelection.csv");
+        
+        // load the data which were written to the the first file
+        market.readItemsFromFile("fairSelection.csv");
+        
+        // demonstrate the toString() method for funsies
+        System.out.println(market);
         
     }
 

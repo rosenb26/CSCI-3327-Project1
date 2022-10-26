@@ -34,7 +34,9 @@ public class FishMarket {
 
         for (int i = 0; i < this.items.length; i++) {
 
+            // a random weight for each Seafood item
             double weight = rng.nextDouble();
+            
             int seafoodChoice = rng.nextInt(n + 3);
 
             if (seafoodChoice < n) {
@@ -73,12 +75,13 @@ public class FishMarket {
     }
 
     /**
-     *
-     * 
+     * Reads from a CSV file and loads the Seafood items 
+     * into this.seafoodFromCSV.
+     * @param fileName The name of the file.
      */
-    public void readItemsFromFile() {
+    public void readItemsFromFile(String fileName) {
         try {
-            Scanner reader = new Scanner(new File("seafood.csv"));
+            Scanner reader = new Scanner(new File(fileName));
             
              //skip the header
             reader.nextLine();
@@ -89,13 +92,13 @@ public class FishMarket {
                 double weight = Double.valueOf(temp[2]);
                 int index = Integer.valueOf(temp[0]);
 
-                if (temp[1].equals("Fish")) {
+                if (temp[1].trim().equals("Fish")) {
                     this.seafoodFromCSV[index] = new Fish(weight);
                 }
-                else if (temp[1].equals("Shrimp")) {
+                else if (temp[1].trim().equals("Shrimp")) {
                     this.seafoodFromCSV[index] = new Shrimp(weight);
                 }
-                else if (temp[1].equals("Scallop")) {
+                else if (temp[1].trim().equals("Scallop")) {
                     this.seafoodFromCSV[index] = new Scallop(weight);
                 }
                 else {
@@ -112,8 +115,8 @@ public class FishMarket {
     public String toString() {
         String result = "";
         for (int i = 0; i < this.seafoodFromCSV.length; i++) {
-            result += "Index: " + i + "; Type: " + this.items[i].getClass().getSimpleName()
-                    + "; Weight: " + this.items[i].getWeight() + "; Price: " + this.items[i].getPrice() + "\n";
+            result += "Index: " + i + "; Type: " + this.seafoodFromCSV[i].getClass().getSimpleName()
+                    + "; Weight: " + this.seafoodFromCSV[i].getWeight() + "; Price: " + this.seafoodFromCSV[i].getPrice() + "\n";
         }
         return result;
     }
